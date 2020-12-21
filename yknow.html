@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Discord Webhook Tutorial</title>
+  </head>
+  <body>
+    <button onclick="sendMessage()">Send</button>
+  </body>
+
+  <script>
+    function sendMessage() {
+      var request = new XMLHttpRequest();
+      request.open("POST", "https://discord.com/api/webhooks/790363022768996384/PPNmM3l9Rn3JZwMIthDz5VQjdnB5zl6ZEYzPVa5h3ao5w7ytSp50l72FZ0epiaijDA-6");
+
+      request.setRequestHeader('Content-type', 'application/json');
+
+      var params = {
+        username: "The Water Provider",
+        avatar_url: "https://cdn.discordapp.com/emojis/652756957735682052.png?v=1",
+        content: "Sip up, babes, it's water time. Have you been drinking enough? Better had <:knifechicken:503717646181597184>"
+      }
+
+      request.send(JSON.stringify(params));
+    }
+  </script>
+</html>
